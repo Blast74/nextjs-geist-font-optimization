@@ -1,0 +1,27 @@
+<Window x:Class="YourNamespace.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Chromatography Application" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Left Panel for Inputs -->
+        <StackPanel Grid.Column="0" Margin="10">
+            <TextBlock Text="Column Length (cm):" />
+            <TextBox x:Name="ColumnLengthTextBox" />
+            <TextBlock Text="Column Diameter (cm):" />
+            <TextBox x:Name="ColumnDiameterTextBox" />
+            <TextBlock Text="Flow Rate (ml/min):" />
+            <TextBox x:Name="FlowRateTextBox" />
+            <Button Content="Scan" Click="ScanButton_Click" />
+            <Button Content="Reset" Click="ResetButton_Click" />
+            <Button Content="Zoom" Click="ZoomButton_Click" />
+        </StackPanel>
+        
+        <!-- Right Panel for Canvas -->
+        <Canvas x:Name="DrawingCanvas" Grid.Column="1" Background="White" />
+    </Grid>
+</Window>
